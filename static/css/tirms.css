@@ -1,0 +1,48 @@
+* {
+  font-family: "Poppins";
+}
+.image img{
+  width: 350px;
+  padding: 25px;
+}
+.image{
+  text-align: center;
+}
+footer{
+  text-align: center;
+}
+main{
+  margin: 50px;
+  padding: 30px;
+}
+@media (max-width: 768px){
+  main{
+    margin: 40px;
+    padding: 20px;
+  }
+  main h2 {
+    text-align: center;
+  }
+  main h3{
+    text-align: center;
+  }
+  main p{
+    text-align: center;
+  }
+}
+@media (max-width: 550px){
+  main{
+    margin: 40px;
+    padding: 20px;
+  }
+  main h2 {
+    text-align: center;
+  }
+  main h3{
+    text-align: center;
+  }
+  main p{
+    text-align: center;
+  }
+  
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dash.css')}}" />
+    <title>Invitation</title>
+  </head>
+  <body>
+    {% extends 'dashboardhome.html' %} Invitation {% block content %}
+    <main>
+      <header>
+          <button id="menu-btn" class="menu-btn"><span class="material-symbols-outlined">menu</span></button>
+          <h1>Invitation</h1>
+      </header>
+      <div class="card">
+    <center>
+      <a
+        ><iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdGOSPfoktaXSF9m5H1oF2ZehAOCsp99By7K5N28beA1ZnN6A/viewform?embedded=true"
+          width="640"
+          height="1378"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        ></a
+      >
+    </center>
+    </div>
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      </div>
+      <p>2023 -© eventmemo</p>
+    </footer>
+    </main>
+
+    {% endblock %}
+  </body>
+</html>

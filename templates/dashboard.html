@@ -1,0 +1,84 @@
+{% extends 'dashboardhome.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/lightslider.css')}}" />
+<title>Eventmemo - Dashbord</title>
+<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/lightslider.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-check"></i>
+      {{ message }}
+    </div>
+    {% endfor %} 
+    <script>
+        var closeButton = document.getElementById('btn');
+        
+       
+        closeButton.addEventListener('click', function() {
+         
+          var alertMessage = this.parentElement;
+          
+          
+          alertMessage.style.display = 'none';
+        });</script>
+<main>
+    <header>
+        <button id="menu-btn" class="menu-btn"><span class="material-symbols-outlined">menu</span></button>
+        <h1>Dashboard</h1>
+        <button onclick="window.location.href='{{ url_for('create_event') }}'"  class="event-btn">Create evente +</button>
+    </header>
+    <section>
+        <div class="title">
+            <h1>welcome 👋 {{current_user.username}} !</h1>
+        </div>
+        <div class="event-cards">
+            <ul id="autoWidth" class="cs-hidden">
+                {% for p in post %}
+                <li class="item-a">
+                    <div class="card">
+                        {% if p.image %}
+                        <img src="{{ url_for('static', filename='images/' + p.image) }}" alt="">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/default1.png')}}" alt="defaultprofil" />
+                        {% endif %}
+                        <h2 class="title-card">{{ p.title }}</h2>
+                        <p class="slug">{{ p.slug }}</p>
+                        <p class="place"><i class="fa-solid fa-location-dot"></i>{{ p.place }}</p>
+                        <div class="date">
+                            <i class="fa-solid fa-clock"></i>
+                            <div class="start-end">
+                                <p class="start">{{ p.start.strftime('%m/%d/%Y') }} <span class="time">{{ p.start.strftime('%I:%M %p') }}</span></p>
+                                <p class="end">{{ p.end.strftime('%m/%d/%Y') }} <span class="time">{{ p.end.strftime('%I:%M %p') }}</span></p>
+                            </div>
+                        </div>
+                        <div class="card-btns">
+                            <button class="get-btn" onclick="window.location.href='{{ url_for('invite')}}'">Get invitation</button>
+                            {% if current_user.id == p.author %}
+                            <div class="update-btn">
+                                <button onclick="window.location.href='{{ url_for('edit_event', id=p.id) }}'">edit</button>
+                                <button onclick="window.location.href='{{ url_for('delete_event', id=p.id) }}'">delete</button>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <p>2023 -© eventmemo</p>
+    </footer>
+</main>
+</body>
+</html>
+{% endblock %}

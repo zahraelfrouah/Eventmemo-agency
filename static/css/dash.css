@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+    appearance: none;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 400;
+}
+html{
+    font-size: 14px;
+}
+.po{
+    padding: 11px;
+}
+center iframe{
+    padding: 1px;
+    height: 600px;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.container{
+    display: grid;
+    width: 100%;
+    gap: 1.8rem;
+    grid-template-columns: 17rem auto;
+}
+
+aside{
+    height: 824px;
+    background-color: black;
+    border-radius: 0px 90px 90px 0px;
+}
+
+aside .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3.4rem;
+}
+
+aside .logo{
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+aside .logo h2 span{
+    font-weight: 300;
+}
+
+aside .top img{
+    width: 4rem;
+}
+
+aside .close{
+    display: none;
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+}
+aside .close span{
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+}
+
+/* SIDEBAR */
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    padding-top: 29px;
+}
+
+.cont2{
+    position: relative;
+    left: 30px;
+    top: -840px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.sidebar center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 47px;
+}
+.sidebar .profile-image{
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+.sidebar .profile-image img{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+}
+.sidebar center h4{
+    color: white;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.sidebar center button{
+    border: none;
+    color: white;
+    background-color: hsl(300, 1%, 60%);
+    padding: 3px 19px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease; 
+}
+.sidebar center button:hover{
+    transform: scale(1.1);
+}
+
+
+aside .sidebar a{
+    display: flex;
+    color: white;
+    margin-left: 3rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 0.3s ease;
+}
+aside .sidebar a:hover{
+    background-color: white;
+    color: black;
+    padding-left: 1rem;
+    margin-left: 2.7rem;
+    border-radius: 30px 0px 0px 30px;
+}
+
+aside h3{
+    font-weight: 500;
+}
+
+aside .sidebar a span{
+    font-size: 1.6rem;
+}
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 0rem;
+    width: 87%;
+}
+
+.alert {
+    background-color: rgb(38, 175, 95);
+    padding: 10px 20px 10px;
+    border-radius: 30px;
+    font-size: 17px;
+    text-align: center;
+    color: white;
+    opacity: 60%;
+  }
+
+
+#calendar{
+    margin-top: -96px;
+padding: 90px;
+width: 1200px;
+height: 800px;
+}
+
+/* main */
+main{
+    margin-top: 1.4rem;
+    display: grid;
+    grid-template-rows: 7rem auto 4rem;
+}
+
+main header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+main header h1{
+    font-size: 40px;
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+main header .event-btn{
+    color: white;
+    border: none;
+    border-radius: 30px;
+    background-color: black;
+    padding: 11px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+main header .event-btn:hover{
+    transform: scale(1.05);
+}
+main header .menu-btn{
+    display: none;
+    border: none;
+    background: transparent;
+}
+
+/* section */
+
+section{
+    display: grid;
+    grid-template-rows: 4rem auto;
+    gap: 1rem;
+    width: 100%;
+}
+section .title h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+section .event-cards{
+    overflow: hidden;
+}
+
+section .event-cards .card{
+    width: 350px;
+    height: 516px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    box-sizing: border-box;
+    margin: 20px 10px;
+}
+
+section .event-cards .card img{
+    width: 350px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+section .event-cards .card h2{
+    font-size: 30px;
+    font-weight: 600;
+}
+section .event-cards .card .slug{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+section .event-cards .card .place{
+    font-size: 16px;
+    font-weight: 600;
+}
+section .event-cards .card .place i{
+    margin-right: 10px;
+}
+section .event-cards .card .date{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+section .event-cards .card .date i{
+    margin-right: 10px;
+}
+section .event-cards .card .card-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 100px;
+}
+section .event-cards .card .card-btns .get-btn{
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+section .event-cards .card .card-btns .get-btn:hover{
+    transform: scale(1.1);
+}
+section .event-cards .card .card-btns .update-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section .event-cards .card .card-btns .update-btn button{
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+section .event-cards .card .card-btns .update-btn button:hover{
+    transform: scale(1.1);
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    margin-top: -56 px;
+}
+footer .social-icons a{
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    color: black;
+}
+
+@media (max-width: 768px){
+    /* media queries - sidebar */
+
+    .container{
+        width: 100%;
+        grid-template-columns: 7rem auto;
+        transition: 0.3s ease-in-out;
+    }
+    aside .top{
+        margin-top: 1.4rem;
+        transition: 0.3s ease-in-out;
+    }
+    .sidebar center{
+        margin-bottom: 14px;
+        transition: 0.3s ease-in-out;
+    }
+    .sidebar .profile-image{
+        width: 30px;
+        height: 30px;
+    }
+    #calendar{
+        margin-top: 90px;
+    padding: 90px;
+    width: 1000px;
+    height: 800px;
+    }
+    
+
+    aside .logo h2{
+        display: none;
+        transition: 0.3s ease-in-out;
+    }
+
+    aside .sidebar h3{
+        display: none;
+        transition: 0.3s ease-in-out;
+    }
+    aside .sidebar a{
+        width: 5.6rem;
+        margin-left: 2.5rem;
+        transition: 0.3s ease-in-out;
+    }
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 0rem;
+        transition: 0.3s ease-in-out;
+    }
+    
+.sidebar .profile-image img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+}
+.po{
+    padding: 20px;
+}
+}
+
+@media (max-width: 590px){
+    .container{
+        display: flex;
+        margin-left: 5px;
+    }
+    center iframe{
+        padding: 1px;
+        height: 950px;
+    }
+    aside{
+        display: none;
+        position: absolute;
+        width: 18rem;
+        left: 0%;
+        z-index: 3;
+    }
+    aside .logo h2{
+        display: inline;
+    }
+    aside .sidebar h3{
+        display: inline;
+    }
+    aside .sidebar a{
+        width: 15rem;
+    }
+    aside .close{
+        display: inline-block;
+    }
+    main{
+        margin-top: 0;
+    }
+     #calendar{
+        margin-top: 90px;
+    padding: 90px;
+    width: 1000px;
+    height: 800px;
+    }
+    
+
+    main header{
+        height: 70px;
+        margin-left: -26px;
+        padding: 0%;
+        justify-content: space-around;
+        box-shadow: 6px 0px 9px 1px #ddd;
+    }
+    main header .menu-btn{
+        display: inline-block;
+        cursor: pointer;
+    }
+    main header h1{
+        font-size: 20px;
+        padding-right: 10px;
+    }
+    main header .event-btn{
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    section .title h1 {
+        font-size: px;
+        font-weight: 600;
+    }
+    section .event-cards .card {
+        width: 298px;
+    }
+    section .event-cards .card img{
+        width: 296px;
+    }
+}

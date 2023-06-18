@@ -1,0 +1,127 @@
+{% extends 'dashboardhome.html' %}
+{% block content %} 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventmimo - Edit Profile</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<title>dashboard - eventmemo</title>
+<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/lightslider.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="logo.png" alt="">
+                    <h2>event<span class="small">mimo</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <center>
+                    <img src="profile.jpg" class="profile-image" alt="">
+                    <h4>Name</h4>
+                    <button>Profile</button>
+                </center>
+                <a href="dash.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <h3>Dashbord</h3>
+                </a>
+                <a href="event.html">
+                    <span class="material-symbols-outlined">event</span>
+                    <h3>Events</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">edit_square</span>
+                    <h3>Create event</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <h3>Calendrie</h3>
+                </a>
+                <a href=""><span class="material-symbols-outlined">logout</span>
+                <h3>Log out</h3>
+                </a>
+            </div>
+        </aside> -->
+        <main>
+          <header>
+              <button id="menu-btn" class="menu-btn"><span class="material-symbols-outlined">menu</span></button>
+              <h1>User Profile</h1>
+              <button class="event-btn">Create evente +</button>
+          </header>
+          <section>
+              <div class="image">
+                {% if current_user.profil_pic %}
+                <img
+                  src="{{ url_for('static', filename='images/' + current_user.profil_pic )}}"
+                  alt="defaultprofil"
+                  width="150"
+                />
+                {% else %}
+                <img
+                  src="{{ url_for('static', filename='images/default.png')}}"
+                  alt="defaultprofil"/>
+                {% endif %}
+                  <h2>{{current_user.username}} </h2>
+                  <p class="email">{{current_user.email}} </p>
+                  <a class="btn" href="{{ url_for('logout') }}">logout</a>
+              <br>
+              <a class="btn" href="{{ url_for('delete', id=id )}}">Delete profile</a>
+              </div>
+              <div class="info">
+                {% if id == current_user.id %}
+                <form
+                action="/update/{{ name_to_update.id }}"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                    {{ form.hidden_tag() }}
+                    <div class="submit">
+                    {{form.profil_pic.label(class="form-label") }}
+                    {{form.profil_pic(class="form-control",
+                value=name_to_update.profile_pic)}}
+              </div>
+                <br>
+                <br>
+                      <div class="input">
+                          <label for="name">Username</label>
+                          {{form.username(class="form-control", value=name_to_update.username) }}
+                      </div>
+                      
+                      <div class="input">
+                          <label for="email">Email</label>
+                          {{form.email(class="form-control", value=name_to_update.email) }}
+                      </div>
+                      {{ form.submit(class="btn btn-success") }}
+                  </form>   
+            {% else %}
+            <h1 style="color: red">Access Dined!</h1>
+            <h6>sorry, you cannot acces this user profile....</h6>
+            {% endif %}
+              </div>
+          </section>
+          <footer>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                  <p>2023 -© eventmemo</p>
+              </div> 
+          </footer>
+        </main>
+    </div>
+    <script src="index.js"></script>
+    {% endblock %}

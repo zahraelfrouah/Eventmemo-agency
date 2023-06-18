@@ -1,0 +1,85 @@
+{% extends 'dashboardhome.html' %}
+{% block content %} 
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/createvent.css')}}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<title>dashboard - eventmemo</title>
+<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/lightslider.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+
+<main>
+  <header>
+      <button id="menu-btn" class="menu-btn"><span class="material-symbols-outlined">menu</span></button>
+      <h1>Create Event</h1>
+      <button class="event-btn">Create evente +</button>
+  </header>
+  <section>
+      <div class="event-details">
+        {% if current_user.is_authenticated %}
+        <form action="{{ url_for('create_event') }}" method="POST" enctype="multipart/form-data">
+              <div class="info">
+                {{ form.hidden_tag() }} 
+                  <div class="input">
+                      <label for="title">Event Title</label>
+                      {{form.title(class="form-control") }}
+                  </div>
+                  <div class="input">
+                      <label for="slug">Event slug</label>
+                      {{form.slug(class="form-control")}}
+                  </div>
+                  <div class="input">
+                      <label for="place">Event Location</label>
+                      {{form.place(class="form-control")}}
+                  </div>
+              </div>
+              <div class="time">
+                  <h4>Time</h4>
+                  <div class="input">
+                      <label for="start">Start</label>
+                      {{ form.start(class="form-control") }}
+                  </div>
+                  <div class="input">
+                      <label for="end">End</label>
+                      {{ form.end(class="form-control") }}
+                  </div>
+                  <div class="bg">
+                      <p>Chose your event background</p>
+                      {{ form.image.label }} 
+                      {{ form.image(class="form-control-file") }}
+                      <!-- {% if post.image %}
+    <img src="{{ url_for('static', filename='images/' + post.image) }}" >
+    {% else %}
+          <img
+            src="{{ url_for('static', filename='images/defaultevent.png')}}"
+            alt="defaultprofil"
+            width="350"
+          />
+  {% endif %} -->
+                  </div>
+              </div>
+              <div class="event-img">
+          <button>{{ form.submit }}</button>
+      </div>
+          </form> 
+      </div>
+  </section>
+  <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      </div>
+      {% else %}
+    <h2>Must Be Logged In....</h2>
+    <a href="{{ url_for('login')}}">Login here</a>
+    {% endif %} 
+      <p>2023 -© eventmemo</p>
+  </footer>
+</main>
+
+{% endblock %}

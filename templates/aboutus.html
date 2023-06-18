@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Averia+Serif+Libre:ital,wght@0,300;1,300&family=Bai+Jamjuree:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800&family=Inter:wght@100;400;500;600;700&family=Jost:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Montaga&family=Montserrat:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&family=Open+Sans:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/about.css')}}"
+    />
+    <title>About Us</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{{url_for('static', filename='images/logo3.png')}}" alt="" />
+      </div>
+      <h1 class="txt">About Us</h1>
+    </header>
+    <h1 class="title">Our Team</h1>
+    <div class="container">
+      <div class="imag1">
+        <img
+          src="{{url_for('static', filename='images/safa.png')}}"
+          alt="info"
+        />
+        <h2>Safa Idam hamed</h2>
+        <h3>Back-end developer</h3>
+        <h5>contact</h5>
+        <i class="fa-solid fa-arrow-down"></i>
+        <h4><a href="https://www.linkedin.com/in/safa-idam-hamed-388519258/">Linkedin</a></h4>
+        <h4 ><a href="https://github.com/SAFAIDAM">GitHub</a></h4>
+        <h4 ><a href="href="idamhamedsafa@gmail.com"">Gmail</a></h4>
+      </div>
+      <div class="imag2">
+        <img
+          src="{{url_for('static', filename='images/hassna.png')}}"
+          alt="info"
+        />
+        <h2>Hassna Hagag</h2>
+        <h3>Back-end developer</h3>
+        <h5>contact</h5>
+        <i class="fa-solid fa-arrow-down"></i>
+        <h4><a href="https://www.linkedin.com/in/hassna-hagag-76257a1a5/">Linkedin</a></h4>
+        <h4><a href="https://github.com/Hassna-ha">GitHub</a></h4>
+        <h4><a href="hassna.hagag@gmail.com">Gmail</a></h4>
+      </div>
+      <div class="imag3">
+        <img src="{{url_for('static', filename='images/zahra.png')}}" alt="info" />
+        <h2>Zahra Elfrouah</h2>
+        <h3>Front-end developer</h3>
+        <h5>contact</h5>
+        <i class="fa-solid fa-arrow-down"></i>
+        <h4><a href="https://www.linkedin.com/in/elfrouah-zahra-8b2532225/">Linkedin</a></h4>
+        <h4><a href="https://github.com/zahraelfrouah">GitHub</a></h4>
+        <h4><a href="zahraelfrouah1@gmail.com">Gmail</a></h4>
+      </div>
+      <div class="imag4">
+        <img src="{{url_for('static', filename='images/abdelali.png')}}" alt="info" />
+        <h2>Abdelaali <br> Ezmamti
+
+        </h2>
+        <h3>Front-end developer</h3>
+        <h5>contact</h5>
+        <i class="fa-solid fa-arrow-down"></i>
+        <h4><a href="https://www.linkedin.com/in/abdelaali-ezmamti-8484b527b/">Linkedin</a></h4>
+        <h4><a href="https://github.com/AbdoxEz">GitHub</a></h4>
+        <h4><a href="ezmamtiabdelaali@gmail.com">Gmail</a></h4>
+      </div>
+      <div class="imag5">
+        <img src="{{url_for('static', filename='images/anwar.png')}}" alt="info" />
+        <h2>Anwar Ilyess</h2>
+        <h3>Designer</h3>
+        <h5>contact</h5>
+        <i class="fa-solid fa-arrow-down"></i>
+        <h4><a href="https://www.linkedin.com/in/anouar-elyasse-58a5bb27b/">Linkedin</a></h4>
+        <h4><a href="https://www.behance.net/anouarelyasse">Behance</a></h4>
+        <h4><a href="anouarelyasse123@gmail.com">Gmail</a></h4>
+      </div>
+    </div>
+    <div class="btn"><a href="{{ url_for('home') }}">Back to Home</a></div>
+    <footer>
+      <p>Copyright &copy; 2023 eventmemo</p>
+    </footer>
+  </body>
+</html>

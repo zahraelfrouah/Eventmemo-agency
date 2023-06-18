@@ -1,0 +1,74 @@
+{% extends 'dashboardhome.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/event.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/lightslider.css')}}" />
+<title>Eventmemo - Events</title>
+<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/lightslider.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-check"></i>
+      {{ message }}
+      <button
+      >x</button>
+    </div>
+    {% endfor %} 
+<main>
+    <header>
+        <button id="menu-btn" class="menu-btn"><span class="material-symbols-outlined">menu</span></button>
+        <h1>Dashboard</h1>
+        <button onclick="window.location.href='{{ url_for('create_event') }}'"  class="event-btn">Create evente +</button>
+    </header>
+    <section>
+        <div class="title">
+            <h1>{{current_user.username}}'s events</h1>
+        </div>
+        <div class="event-cards">
+            <ul id="autoWidth" class="cs-hidden">
+                {% for post in posts %}
+                <li class="item-a">
+                    <div class="card">
+                        {% if post.image %}
+                        <img src="{{ url_for('static', filename='images/' + post.image) }}" alt="">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/default2.png')}}" alt="defaultprofil" />
+                        {% endif %}
+                        <div class="card-details">
+                        <h2 class="title-card">{{ post.title }}</h2>
+                        <p class="slug">{{ post.slug }}</p>
+                        <p class="place"><i class="fa-solid fa-location-dot"></i>{{ post.place }}</p>
+                        <div class="date">
+                            <i class="fa-solid fa-clock"></i>
+                            <div class="start-end">
+                                <p class="start">{{ post.start.strftime('%m/%d/%Y') }} <span class="time">{{ post.start.strftime('%I:%M %p') }}</span></p>
+                                <p class="end">{{ post.end.strftime('%m/%d/%Y') }} <span class="time">{{ post.end.strftime('%I:%M %p') }}</span></p>
+                            </div>
+                            
+                        </div>
+                            <div class="update-btn">
+                                <button onclick="window.location.href='{{ url_for('edit_event', id=post.id) }}'">Edit this event</button>
+                                <button onclick="window.location.href='{{ url_for('delete_event', id=post.id) }}'">Delete this event</button>
+                            </div>
+                          </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <p>2023 -© eventmemo</p>
+    </footer>
+</main>
+</body>
+</html>
+{% endblock %}

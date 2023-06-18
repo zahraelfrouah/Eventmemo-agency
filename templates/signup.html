@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/sign.css')}}"
+    />
+    
+    <!-- <script src="{{url_for('static', filename='js/main.js')}}"></script> -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Eventmemo - Sign up</title>
+  </head>
+  <body>
+    {% block content %} 
+    <section>
+      <div class="contentbx">
+        <div class="formbx">
+          {% for message in get_flashed_messages() %}
+          <div
+            class="alert"
+            role="alert"
+          >
+            {{ message }}
+          </div>
+          {% endfor %} {% if name %}
+          <br />
+          {% else %}
+          <form method="POST">
+            <h2>Create account</h2>
+            {{ form.hidden_tag() }}
+            <div class="inputbx">
+              <i class="fa-solid fa-user"></i>
+              {{ form.username(class="form-control", placeholder="Username",
+              required=True) }}
+            </div>
+            <div class="inputbx">
+              <i class="fa-solid fa-envelope"></i>
+              {{ form.email(class="form-control", placeholder="Email",
+              required=True) }}
+            </div>
+            <div class="inputbx">
+              <i class="fa-solid fa-lock"></i>
+              {{ form.password_hash(class="form-control",
+              placeholder="Password", required=True) }}
+            </div>
+            <div class="inputbx">
+              <i class="fa-solid fa-lock"></i>
+              {{ form.password_hash2(class="form-control", placeholder="Confirm your password", required=True) }}
+            </div>
+            <p class="text">By creating an account, you agree to our <br> <a href="{{ url_for('tirms')}}">Terms of Service</a> </p>
+            {{ form.submit(class="btn") }}
+          </form>
+          {% endif %} {% endblock %}
+        </div>
+      </div>
+      <div class="imgbx">
+        <div class="container">
+          <h3>One of us ?</h3>
+          <p>If you have already an account login here!</p>
+          <button><a href="{{ url_for('login') }}">Log in</a></button>
+        </div>
+        <img
+          src="{{url_for('static', filename='images/logo.png')}}"
+          class="image"
+          alt="logo"
+        />
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 40px;
+}
+header{
+  height: 35vh;
+  background-color: black;
+  border-radius: 0px 0px 90px 90px;
+}
+.logo img{
+  width: 330px;
+  padding: 30px;
+}
+.logo{
+  text-align: center;
+}
+.txt{
+ color: white;
+ text-align: center;
+}
+.title{
+  text-align: center;
+  padding: 10px;
+}
+.container h3{
+  text-align: center;
+}
+.imag1{
+ 
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.imag1 h4{
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+}
+.imag1 h4:hover{
+  transform: scale(1.1);
+  color: rgb(151, 149, 149);
+}
+.imag2{
+  
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+.imag2 h4{
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+}
+.imag2 h4:hover{
+  transform: scale(1.1);
+  color: rgb(151, 149, 149);
+}
+.imag3{
+  
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+.imag3 h4{
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+}
+.imag3 h4:hover{
+  transform: scale(1.1);
+  color: rgb(151, 149, 149);
+}
+.imag4{
+  
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+.imag4 h4{
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+}
+.imag4 h4:hover{
+  transform: scale(1.1);
+  color: rgb(151, 149, 149);
+}
+.imag5{
+ 
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+.imag5 h4{
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+}
+.imag5 h4:hover{
+  transform: scale(1.1);
+  color: rgb(151, 149, 149);
+}
+footer{
+  text-align: center;
+  padding: 20px;
+}
+.btn{
+  text-align: center;
+
+}
+.btn a{
+  border-radius: 30px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.btn a:hover{
+transform: scale(1.1);
+color: rgb(170, 170, 170);
+}
+@media (max-width: 768px){
+  .container {
+    padding: 20px;
+  }
+  .container{
+    display: block;
+  }
+  .logo img {
+    width: 200px;
+  }
+  header{
+    height: 35vh;
+    background-color: black;
+    border-radius: 0px 0px 224px 224px;
+  }
+  .imag1, .imag2, .imag3, .imag4, .imag5 {
+    flex: 1 1 30%;
+  }
+  .txt{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+   }
+   .title{
+     text-align: center;
+     padding: 10px;
+     font-size: 25px;
+   }
+   body{
+    overflow-x: hidden;
+   }
+}
+@media (max-width: 550px){
+  .container {
+    padding: 10px;
+  }
+  .logo img {
+    width: 200px;
+  }
+  .imag1, .imag2, .imag3, .imag4, .imag5 {
+    flex: 1 1 50%;
+  }
+}

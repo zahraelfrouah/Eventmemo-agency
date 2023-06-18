@@ -1,0 +1,157 @@
+
+  {% block content %}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+      <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+      <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+      <title>Digital Creative Agency in Agadir : Eventmemo</title>
+  </head>
+  <body>
+  
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
+      
+      <header>
+          <img src="{{url_for('static', filename='images/logo3.png')}}" alt="">
+          <button onclick="window.location.href='{{ url_for('signup') }}'">Sign up</button>
+      </header>
+  
+      <section class="sec-1">
+          <div class="row-1">
+              <span class="title">event</span>
+              <button onclick="window.location.href='{{ url_for('signup') }}'" class="create-btn">Create <br> event <br><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <div class="row-2">
+              <p>The Platform that <br> maintain your events <br> and make them <br> memorable</p>
+              <span class="title">memo</span>
+          </div>
+      </section>
+  
+      <section class="sec-2">
+          <p class="t1">Suggestions</p>
+          <div class="images">
+              <img src="{{url_for('static', filename='images/Rectangle 1.png')}}" alt="event">
+              <img class="img2" src="{{url_for('static', filename='images/Rectangle 2.png')}}" alt="event">
+              <img src="{{url_for('static', filename='images/Rectangle 3.png')}}" alt="event">
+          </div>
+          <p>Eventmemo helps small businesses <br> manage there evetns.</p>
+      </section>
+  
+      <section class="sec-3">
+          <div class="main">
+              <img src="{{url_for('static', filename='images/e.png')}}" alt="logo">
+              <div class="content">
+                  <p>All-in-one Platforme <br> host event , maintain <br> your events registration.</p>
+                  <button onclick="window.location.href='{{ url_for('signup') }}'"  >start your event</button>
+              </div>
+          </div>
+          <div class="marque">
+              <h3>eventmemo</h3>
+              <h3>eventmemo</h3>
+              <h3>eventmemo</h3>
+              <h3>eventmemo</h3>
+              <h3>eventmemo</h3>
+              <h3>eventmemo</h3>
+          </div>
+      </section>
+  
+      <section class="sec-4">
+          <div class="head">
+              <h1>They trust us</h1>
+          </div>
+          <div class="reviews">
+              <div class="card">
+                  <div class="profile">
+                      <img src="{{url_for('static', filename='images/img1.png')}}" alt="profile">
+                      <h3>Ammi watson</h3>
+                   </div>
+                  <div class="comment">
+                      <div class="stars">
+                          <!-- <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i> -->
+                      </div>
+                      <p>I loved how the platform works</p>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="profile">
+                      <img src="{{url_for('static', filename='images/img2.png')}}" alt="profile">
+                      <h3>Asta clover</h3>
+                   </div>
+                  <div class="comment">
+                      <div class="stars">
+                          <!-- <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i> -->
+                      </div>
+                      <p>the management of the event was amazing</p>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="profile">
+                      <img src="{{url_for('static', filename='images/default.png')}}" alt="profile">
+                      <h3>Erieen Jalon</h3>
+                   </div>
+                  <div class="comment">
+                      <div class="stars">
+                          <!-- <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i> -->
+                      </div>
+                      <p>I really found what i needed in this platform</p>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="profile">
+                      <img src="{{url_for('static', filename='images/default.png')}}" alt="profile">
+                      <h3>Mouana dororo</h3>
+                   </div>
+                  <div class="comment">
+                      <div class="stars">
+                          <!-- <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i> -->
+                      </div>
+                      <p>I had great experience managing my events here</p>
+                  </div>
+              </div>
+          </div>    
+      </section>
+  
+      <footer>
+          <div class="logo">
+              <img src="{{url_for('static', filename='images/logo3.png')}}" alt="">
+          </div>
+          <div class="footer-content">
+              <div class="title">
+                  <h2>You can find <br> us on</h2>
+              </div>
+              <div class="info">
+                  <ul>
+                      <li><i class="fa-solid fa-envelope"></i> eventmemo@gmail.com</li>
+                      <li><i class="fa-solid fa-phone"></i> (+212) 7 60 00 00 00</li>
+                      <li><i class="fa-solid fa-location-dot"></i> Agadir, Avenue Hassan II </li>
+                  </ul>
+              </div>
+              <div class="social-icons">
+                  <h2 onclick="window.location.href='{{ url_for('about') }}'">About Us</h2>
+                  <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+      </footer>
+      <script type="text/javascript" src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+  </html>
+  {% endblock %}

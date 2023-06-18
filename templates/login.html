@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/login.css')}}"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Eventmimo - Login</title>
+  </head>
+  <body>
+    {% block content %}
+    <section>
+      <div class="imgbx">
+        <div class="container">
+          <h3>New here ?</h3>
+          <p>If you don't have account create one here!</p>
+          <button><a href="{{ url_for('signup') }}">Create account</a></button>
+        </div>
+        <img
+          src="{{url_for('static', filename='images/logo.png')}}"
+          class="image"
+          alt="logo"
+        />
+      </div>
+      <div class="contentbx">
+        <div class="formbx">
+          {% for message in get_flashed_messages() %}
+          <div
+            class="alert "
+            role="alert"
+          >
+            {{ message }}
+          </div>
+          {% endfor %} {% if name %}
+          <br />
+          {% else %}
+          <form method="POST">
+            <br />
+            <h2>Log in</h2>
+            <br />
+            {{ form.hidden_tag() }}
+            <div class="inputbx">
+              <i class="fa-solid fa-user"></i>
+              {{form.email(class="form-control", placeholder=" email") }}
+            </div>
+            <div class="inputbx">
+              <i class="fa-solid fa-lock"></i>
+              {{form.password(class="form-control", placeholder="Password")}}
+            </div>
+            <br />
+            
+            {{ form.submit(class="btn") }}
+          </form>
+          {% endif %} {% endblock %}
+        </div>
+      </div>
+    </section>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>

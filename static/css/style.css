@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+    appearance: none;
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    background: #000;
+    color: white;
+    scroll-behavior: smooth;
+    cursor: none;
+}
+.social-icons :hover{
+transform: scale(1.1);
+color: rgb(77, 76, 76);
+}
+body{
+    width: 100%;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+.cursor-dot{
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
+  }
+  .cursor-outline{
+    width: 30px;
+    height: 30px;
+    border: 2px solid hsl(0, 0%, 100%, 0.5);
+  }
+  .cursor-dot, .cursor-outline{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1000000;
+    pointer-events: none;
+  }
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 45px;
+}
+header img{
+    width: 200px;
+    margin-bottom: -67px;
+}
+header button{
+    color: white;
+    border: 1px solid white;
+    background: #000;
+    padding: 9px 58px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-bottom: -67px;
+}
+header button:hover{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+.sec-1{
+    display: block;
+    width: 100%;
+    height: max-content;
+    padding: 0 50px;
+}
+
+.sec-1 .title{
+    font-size: 20vw;
+    font-weight: 600;
+}
+.sec-1 .row-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sec-1 .row-1 .create-btn{
+    width: 248px;
+    height: 248px;
+    background-color: #000;
+    color: #FFFFFF;
+    font-size: 2vw;
+    border: 2px solid white;
+    margin-right: 50px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: rotate(-40.61deg);
+    transition: 0.5s;
+}
+.sec-1 .row-1 .create-btn:hover{
+    color: #000;
+    background-color: #FFFFFF;
+}
+
+.sec-1 .row-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+.sec-1 .row-2 p{
+    font-size: 2vw;
+
+}
+.sec-2{
+    display: block;
+    width: 100%;
+    height: max-content;
+    padding-top: 150px;
+}
+.sec-2 .t1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.sec-2 .images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+}
+.sec-2 .images:hover{
+    transform: scale(0.9);
+}
+.sec-2 .images .img2{
+    padding-top: 200px;
+}
+.sec-2 p{
+    font-size: 1.5vw;
+    text-align: center;
+}
+.sec-3{
+    display: block;
+    width: 100%;
+    height: max-content;
+}
+.sec-3 .main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sec-3 .main img{
+    width: 400px;
+}
+.sec-3 .main .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sec-3 .main .content p{
+    font-size: 2.5vw;
+    margin-bottom: 20px;
+}
+.sec-3 .main .content button{
+    border: 2px solid white;
+    background-color: #000;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 20px 60px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: 0.4s;
+}
+.sec-3 .main .content button:hover{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+.sec-3 .marque{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #000;
+    overflow: hidden;
+}
+.sec-3 .marque h3{
+    font-size: 40px;
+    text-transform: lowercase;
+    color: white;
+    
+    white-space: nowrap;
+    padding: 0 5rem;
+    letter-spacing: 1px;
+    animation: move-rtl 3000ms linear infinite;
+}
+@keyframes move-rtl{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.sec-4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.sec-4 .head h1{
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+.sec-4 .reviews{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.sec-4 .reviews .card{
+    display: flex;
+    align-items: center;
+    width: 480px;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+.sec-4 .reviews .card .profile{
+    text-align: center;
+    margin-right: 15px;
+}
+.sec-4 .reviews .card .profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.sec-4 .reviews .card .comment p{
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+.sec-4 .reviews .card .comment .stars{
+    color: gold;
+    font-size: 14px;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: url(../images/ftr.png);
+    background-position: center;
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+footer .logo img{
+    width: 500px;
+    margin-bottom: 40px;
+}
+footer .footer-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer .footer-content .title h2{
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+footer .footer-content .info ul li{
+    margin-bottom: 12px;
+}
+footer .footer-content .info{
+    margin-bottom: 20px;
+}
+footer .footer-content .info ul li i{
+    margin-right: 5px;
+}
+footer .footer-content .social-icons{
+    text-align: center;
+}
+footer .footer-content .social-icons h2{
+    font-weight: 400;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+footer .footer-content .social-icons h2:hover{
+    transform: scale(1.1);
+    color: rgb(73, 73, 73);
+}
+footer .footer-content .social-icons a{
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+footer .footer-content .social-icons a i{
+    transition: 0.3s;
+}
+footer .footer-content .social-icons a i:hover{
+    transform: scale(1.5);
+    color: rgb(73, 73, 73);
+}
+
+
+@media (max-width: 1040px){
+    .sec-1{
+        padding: 0 20px;
+        grid-template-rows: 36% 24%;
+    }
+    .sec-2 .images img{
+        width: 260px;
+    }
+    .sec-2 p{
+        font-size: 1.2rem !important;
+    }
+    .sec-4 .reviews .card{
+        width: 376px;
+        margin: 0;
+    }
+    .sec-4 .reviews .card .profile img {
+        width: 80px;
+        height: 80px;
+    }
+    .sec-4 .reviews .card .profile h3{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px){
+    .sec-1 .row-1 .create-btn{
+        width: 176px;
+        height: 176px;
+    }
+    .sec-2{
+        padding-top: 100px;
+    }
+    .sec-2 .images .img2{
+        padding-top: 100px;
+    }
+    .sec-2 .images img{
+        width: 200px;
+    }
+    .sec-3 .main .content button{
+        padding: 13px 27px;
+    }
+    .sec-3 .main img{
+        width: 350px;
+    }
+    .sec-4 .reviews .card{
+        width: 307px;
+        margin: 0;
+    }
+    .sec-4 .reviews .card .profile img {
+        width: 65px;
+        height: 65px;
+    }
+    .sec-4 .reviews .card .profile h3{
+        font-size: 12px;
+    }
+    footer .logo img{
+        width: 400px;
+    }
+}
+@media (max-width: 630px){
+    header{
+        padding: 25px;
+    }
+    header img{
+        width: 90px;
+    }
+    .sec-1 .row-1 .create-btn{
+        width: 120px;
+        height: 120px;
+    }
+    .sec-2 .images{
+        display: block;
+        text-align: center;
+        padding-top: 30px;
+    }
+    .sec-2 .images .img2{
+        padding-top: 0;
+    }
+    .sec-3 .main img{
+        width: 250px;
+    }
+    .sec-4{
+        padding-top: 70px;
+    }
+    .sec-4 .reviews .card{
+        width: 380px;
+        margin: 0;
+    }
+    .sec-4 .reviews .card .comment p{
+        font-size: 2.5vw;
+        font-weight: 600;
+    }
+    footer .footer-content{
+        display: block;
+        text-align: center;
+    }
+}
+@media (max-width: 500px){
+    header button{
+        padding: 3px 14px;
+        font-size: 9px;
+        margin-bottom: -65px;
+    }
+    header{
+        padding: 25px 10px;
+    }
+    .sec-1 {
+        padding: 0 20px;
+        grid-template-rows: 18% 16%;
+    }
+    .sec-1 .row-1 .create-btn{
+        width: 52px;
+        height: 52px;
+        margin-right: 10px;
+        margin-bottom: -50px;
+    }
+    .sec-2{
+        padding-top: 50px;
+    }
+    .sec-3 .main{
+        display: block;
+        text-align: center;
+    }
+    .sec-3 .main .content button {
+        padding: 9px 19px;
+    }
+    .sec-4{
+        padding-top: 50px;
+    }
+    .sec-4 .head h1{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    footer .logo img {
+        width: 205px;
+    }
+    footer .footer-content .title h2{
+        font-size: 1.2rem;
+        
+    }
+}
